@@ -1,0 +1,16 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    {% if targetUrl %}
+    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+    {% endif %}
+    <div id="status">
+        <p>             
+            Pon este código en tu coche para que te puedan avisar de que tu coche estorba:
+            <img src="{{ qrcode_url('http://qtpc.com/alert/' ~ user.username, extension='png') }}" />
+        </p>
+    </div>
+{% endblock fos_user_content %}

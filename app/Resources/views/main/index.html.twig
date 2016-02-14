@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}   
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <h1><span>Bienvenido a</span> Quita tu puto coche</h1>
+            </div>
+
+            <div id="status">
+                <p>             
+                    Una prueba del QR:
+                    <img src="{{ qrcode_url('http://qtpc.com/alert/cyuste', extension='png') }}" />
+                </p>
+            </div>
+
+            <div id="next">
+                <h2>Nuevo usuario?</h2>
+                <p>         
+                    <a href="{{ path('fos_user_registration_register') }}">
+                        Regístrate aquí y comienza a aparcar como un cabrón
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

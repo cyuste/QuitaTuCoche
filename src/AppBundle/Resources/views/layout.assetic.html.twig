@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Bienvenido!{% endblock %}</title>
+        {% block stylesheets %} 
+            {% stylesheets 
+                '../vendor/twbs/bootstrap/dist/css/bootstrap.min.css'
+                '../vendor/components/jqueryui/themes/base/jquery-ui.min.css'
+                'bundles/AppBundle/css/appbundle.css'  
+              filter='cssrewrite' %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}  
+        {% endblock %}
+        {% block javascripts %}
+            {% javascripts 
+                '../vendor/components/jquery/jquery.js'
+                '../vendor/components/jqueryui/jquery-ui.js'
+                '../vendor/twbs/bootstrap/dist/js/bootstrap.min.js'
+                '@AppBundle/Resources/Public/js/*'
+            %} <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Bienvenido!{% endblock %}</title>
+        {% block stylesheets %} 
+            <link href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet" />
+            <link href="{{ asset('../vendor/components/jqueryui/themes/base/jquery-ui.min.css') }}" rel="stylesheet" />
+            <link href="{{ asset('bundles/AppBundle/css/appbundle.css') }}" rel="stylesheet" />  
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset( '../vendor/components/jquery/jquery.js') }}"></script>
+            <script src="{{ asset( '../vendor/components/jqueryui/jquery-ui.js') }}"></script>
+            <script src="{{ asset( '../vendor/twbs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset( '@AppBundle/Resources/Public/js/*') }}"></script>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>
